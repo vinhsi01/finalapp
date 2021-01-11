@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 <link rel="stylesheet" href="../css/index.css">
-<title>FotoBook</title>
+<title>Login</title>
 </head>
 <body>
 <header>
@@ -31,30 +31,34 @@
     </nav>
 </header>
 <section>
-    <div class="container-fluid body-index">
-        <div class="row content">
-            <div class="col-2 content-left">
-                <div class="text-primary">Feeds</div>
-                <div>My Photos</div>
-                <div>My Albums</div>
-            </div>
-            <div class="col-8 div-content">
-                <div class="include-content">
-                    <div class="div-btn">
-                        <button type="button" class="btn btn-primary">PHOTO</button>
-                        <button type="button" class="btn btn-light">ALBUM</button>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+    <div class="login">
+        <div class="include-form">
+            <h1 class="title-h1 text-primary">FotoBook Signup</h1>
+            <div>
+                <div class="div-form">
+                    <form>
+                        <div class="form-group">
+                          <label class="title-form" for="exampleInputFirstName">First Name</label>
+                          <input type="text" class="form-control" id="exampleInputFirstName1" placeholder="Enter your First Name">
                         </div>
-                        <div class="col-6">right</div>
-                    </div>
+                        <div class="form-group">
+                          <label class="title-form" for="exampleInputLastName">Last Name</label>
+                          <input type="password" class="form-control" id="exampleInputLastName1" placeholder="Enter your Last Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="title-form" for="exampleInputnewPassword1">New Password</label>
+                            <input type="password" class="form-control" id="exampleInputnewPassword1" placeholder="Enter your Password">
+                        </div>
+                        <div class="form-group">
+                            <label class="title-form" for="exampleInputrePassword1">Password Confirmation</label>
+                            <input type="password" class="form-control" id="exampleInputrePassword1" placeholder="Confirm your Password">
+                        </div>
+                        <div class="ori-div-btn">
+                            <button type="submit" class="btn div-btn btn-primary">Signup</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="col-2">right</div>
         </div>
     </div>
 </section>

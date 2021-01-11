@@ -1,7 +1,75 @@
-.container-fluid {
-    padding-left: 8rem;
+.body-index{
+    padding-right: 0;
+    padding-left: 0;
+    background-color: whitesmoke;
 }
+
 .form-inline .form-control{
     width: 100%;
-    
+}
+.navbar-brand{
+    line-height: 2rem;
+    padding-left: 8rem;
+}
+.navbar-nav{
+    float: right;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding-right: 5rem;
+}
+.text-font{
+    font-size: 16px;
+    font-weight: bold;
+}
+/* form đăng kí */
+.login{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.include-form{
+    margin-top: 8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.title-h1{
+    font-weight: bold;
+    text-align: center;
+}
+.div-form{
+    box-shadow: 0 2px 10px whitesmoke ;
+    background-color: whitesmoke;
+    padding: 50px;
+    border: 1px solid whitesmoke;
+    margin: auto;
+    width: 25rem;
+}
+.title-form{
+    font-weight: bold;
+}
+.ori-div-btn{
+    text-align: center;
+}
+.div-btn{
+    display: inline-block;
+}
+/*index container*/
+.row.content{
+    padding-top: 1rem;
+    height:1000px ;
+}
+.col-2.content-left{
+    text-align: center;
+    padding:2rem;
+}
+.div-content{
+    padding: 2rem;
+    background-color: white;
+    text-align: center;
+}
+.div-btn{
+    display: inline;
 }
