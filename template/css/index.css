@@ -3,7 +3,6 @@
     padding-left: 0;
     background-color: whitesmoke;
 }
-
 .form-inline .form-control{
     width: 100%;
 }
@@ -22,6 +21,9 @@
     font-weight: bold;
 }
 /* form đăng kí */
+.margin-form{
+    margin-top: 2rem;
+}
 .login{
     position: relative;
     width: 100%;
@@ -36,40 +38,81 @@
     bottom: 0;
 }
 .title-h1{
+    font-size: 45px;
     font-weight: bold;
     text-align: center;
 }
 .div-form{
-    box-shadow: 0 2px 10px whitesmoke ;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px gray ;
     background-color: whitesmoke;
     padding: 50px;
     border: 1px solid whitesmoke;
     margin: auto;
     width: 25rem;
 }
+.div-form.a{
+    text-align: center;
+}
 .title-form{
     font-weight: bold;
 }
 .ori-div-btn{
+    margin-top: 1rem;
     text-align: center;
 }
 .div-btn{
     display: inline-block;
 }
 /*index container*/
+/* .photo-content{
+    margin-top: 1rem;
+} */
 .row.content{
     padding-top: 1rem;
     height:1000px ;
 }
-.col-2.content-left{
+.col-xl-2.content-left{
     text-align: center;
     padding:2rem;
 }
 .div-content{
     padding: 2rem;
     background-color: white;
-    text-align: center;
 }
 .div-btn{
+    text-align: center;
     display: inline;
+}
+.photo{
+    height: 12rem;
+    width: 100%;
+}
+.photo-img{
+    padding-right: 0;
+    padding-left: 0;
+}
+.photo-content{
+    height: 100%;   
+    padding-right: 0;
+    padding-left: 1rem;
+    position: relative;
+}
+.col-left{
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid whitesmoke;
+    box-shadow: 0 2px 10px gray;
+}
+.photo-name{
+    color: blue;
+}
+.bot-item{
+    position: absolute;
+    bottom: -5rem;
+}
+.pagination{
+    padding-top: 2rem;
+    justify-content: center;
 }

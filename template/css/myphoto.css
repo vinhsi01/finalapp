@@ -1,0 +1,15 @@
+.add-new{
+    height: 2rem;
+}
+.myphoto-content{
+    height: 50rem;
+}
+.detail-photo{
+    box-shadow:0 2px 10px gray;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    display: inline-block;
+}
+.custom-file{
+    margin-bottom:1rem;
+}

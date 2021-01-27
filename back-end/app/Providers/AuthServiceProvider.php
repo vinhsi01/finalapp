@@ -13,6 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
+        Commnet::class => commentPolicy::class
         // 'App\Model' => 'App\Policies\ModelPolicy',
     ];
 

@@ -1,0 +1,12 @@
+.form-edit-img{
+    text-align: center;
+}
+.form-edit-info{
+    margin-top: 2rem;
+    width: 30rem;
+}
+@media screen and (min-width: 1200px){
+    .col-form-label{
+        text-align: right;
+    }
+}

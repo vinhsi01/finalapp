@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,8 +15,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+    //protected $table = 'users';
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstName','lastName', 'email', 'password',
     ];
 
     /**
@@ -36,4 +37,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function setPasswordAttribute($value)
+    {
+        if( \Hash::needsRehash($value) ) {
+            $value = \Hash::make($value);
+        }
+        $this->attributes['password'] = $value;
+    }
 }

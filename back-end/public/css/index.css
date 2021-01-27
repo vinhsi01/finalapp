@@ -1,0 +1,122 @@
+.body-index{
+    padding-right: 0;
+    padding-left: 0;
+    background-color: whitesmoke;
+}
+.form-inline .form-control{
+    width: 100%;
+}
+.navbar-brand{
+    line-height: 2rem;
+    padding-left: 8rem;
+}
+.navbar-nav{
+    float: right;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding-right: 5rem;
+}
+.text-font{
+    font-size: 16px;
+    font-weight: bold;
+}
+/* form đăng kí */
+.margin-form{
+    margin-top: 2rem;
+}
+.login{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.include-form{
+    margin-top: 8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.title-h1{
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+}
+.div-form{
+    border-radius: 5px;
+    box-shadow: 0 2px 10px gray ;
+    background-color: whitesmoke;
+    padding: 50px;
+    border: 1px solid whitesmoke;
+    margin: auto;
+    width: 25rem;
+}
+.div-form.a{
+    text-align: center;
+}
+.title-form{
+    font-weight: bold;
+}
+.ori-div-btn{
+    margin-top: 1rem;
+    text-align: center;
+}
+.div-btn{
+    display: inline-block;
+}
+/*index container*/
+/* .photo-content{
+    margin-top: 1rem;
+} */
+.row.content{
+    padding-top: 1rem;
+    height:1000px ;
+}
+.col-xl-2.content-left{
+    text-align: center;
+    padding:2rem;
+}
+.div-content{
+    padding: 2rem;
+    background-color: white;
+}
+.div-btn{
+    text-align: center;
+    display: inline;
+}
+.photo{
+    height: 12rem;
+    width: 100%;
+}
+.photo-img{
+    padding-right: 0;
+    padding-left: 0;
+}
+.photo-content{
+    height: 100%;   
+    padding-right: 0;
+    padding-left: 1rem;
+    position: relative;
+}
+.photo-modal{
+    height: 25rem;
+    width: 100%;
+}
+.col-left{
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid whitesmoke;
+    box-shadow: 0 2px 10px gray;
+}
+.photo-name{
+    color: blue;
+}
+.bot-item{
+    position: absolute;
+    bottom: -5rem;
+}
+.pagination{
+    padding-top: 2rem;
+    justify-content: center;
+}
