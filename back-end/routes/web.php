@@ -30,8 +30,11 @@ Route::get('/','PostController@index');
 Route::get('/album','AlbumController@index')->name('album');
 Route::view('/addAlbum/store','User.addAlbum');
 Route::post('/album/store','AlbumController@store');
-
+Route::get('/album/delete/{id}','AlbumController@destroy');
+Route::get('/editAlbum/{id}','AlbumController@edit')->name('editAlbum');
+Route::put('/album/update','AlbumController@update');
 Route::get('/admin','AdminController@index')->name('admin');
+Route::get('/delete/media/{id}/{idAlbum}','AlbumController@deleteMedia');
 // Route::group(['middleware' => ['auth']],function(){
     Route::view('/addPhoto/store','User.addPhoto');
     Route::get('/photo','PostController@showPhoto');

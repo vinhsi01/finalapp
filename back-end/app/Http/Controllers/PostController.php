@@ -52,6 +52,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        //dd(storage_path('app/public') . '/download.jpeg');
+       //dd($request->all(), $request->file('file'));
+      //     dd($request->file('file'));
         $post = new Post;
         $post->user_id = $request['user_id'];
         $post->post_title = $request['title'];
