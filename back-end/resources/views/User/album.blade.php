@@ -10,29 +10,23 @@
             </div>
             <div class="col-xl-8 div-content">
                 <div class="add-new">
-                    <div><button class="btn btn-success float-right">Add New Photo</button></div>
+                    <div><a href="/addAlbum/store"><button class="btn btn-success float-right">Add New Album</button></a></div>
                 </div>
                 <hr>
                 <div class="myphoto-content">
                     <div>
-                        <div class="detail-photo">
-                            <img src="../images/images.png" />
-                        </div>
-                        <div class="detail-photo">
-                            <img src="../images/images.png" />
-                        </div>
-                        <div class="detail-photo">
-                            <img src="../images/images.png" />
-                        </div>
-                        <div class="detail-photo">
-                            <img src="../images/images.png" />
-                        </div>
-                        <div class="detail-photo">
-                            <img src="../images/images.png" />
-                        </div>
-                        <div class="detail-photo">
-                            <img src="../images/images.png" />
-                        </div>
+                        @if($album)
+                            @foreach($album as $item)
+                                <div class="detail-photo">
+                                <a href="/editAlbum/{{$item->id}}"><img  src="{{$item->getFirstMediaUrl('imagesAlbum')}}"></a>
+                                <div class="title-post"><b class="text-success">{{$item->album_title}}</b>
+                                    <button type="button" class="close" aria-label="Close">
+                                    <a href="/album/delete/{{$item->id}}" aria-hidden="true">&times;</a>
+                                    </button>
+                                </div>  
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
                 <div class="pagination">

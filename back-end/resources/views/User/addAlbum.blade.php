@@ -10,21 +10,18 @@
             </div>
             <div class="col-xl-8 div-content">
                 <div class="add-new">
-                    <div class="d-xl-inline"><b> Edit Photo</b></div>
-                    <a href="/photo"><button class="float-right btn btn-primary">Back</button></a> 
+                    <div><b> New Photo </b></div>
                 </div>
                 <hr>
                 <div class="myphoto-content">
-                    @foreach($post as $item)
-                    <form action="/photo/update" class="dropzone" id="myawesomedropzone" enctype="multipart/form-data" method="POST">
+                    <form action="/album/store" class="dropzone" id="myawesomedropzone" enctype="multipart/form-data" method="POST">
                         @csrf
-                        <input type="hidden" id ="id" name ="id" value="{!! $item->id !!}">
-                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" id ="id" name ="user_id" value="{{Auth::user()->id}}">
                         <div class="row">
                             <div class="col">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Title</label>
-                                <input type="text" class="form-control" name="title" value="{{$item->post_title}}">
+                                <input type="text" class="form-control" name="title" placeholder="Title">
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Sharing Mode</label>
@@ -33,21 +30,19 @@
                                     <option value="2">Private</option>
                                   </select>
                             </div>
-                            <div class="fallback">
-                                <input name="file[]" type="file" multiple />
-                            </div>
                             </div>
                             <div class="col">
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Description</label>
-                                <textarea class="form-control" name="description" id="exampleFormControlTextarea1"  rows="3">{{$item->post_description}}</textarea>
+                                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" placeholder="Description" rows="3"></textarea>
                             </div>
                             </div>
                         </div>
-                        <div><img  src="{{$item->getFirstMediaUrl('images')}}"></div>
-                        <button type="submit" class="btn btn-success">Save</button>
+                        <div class="fallback">
+                          <input name="file[]" type="file" multiple />
+                      </div>
+                      <button type="submit" id="btn" class="btn btn-success">Save</button>
                     </form>
-                    @endforeach
                 </div>
             </div>
             <div class="col-xl-2"></div>
@@ -78,6 +73,5 @@ Dropzone.options.myawesomedropzone ={
         })
     }
 }
-
 </script>
 @endsection

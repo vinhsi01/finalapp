@@ -39,9 +39,9 @@
                             </div>
                         </div>
                         <div class="fallback">
-                          <input name="file" type="file" />
+                          <input name="file[]" type="file" multiple />
                       </div>
-                      <button type="submit" class="btn btn-success">Save</button>
+                      <button type="submit" id="btn" class="btn btn-success">Save</button>
                     </form>
                 </div>
             </div>
@@ -52,35 +52,27 @@
 @endsection
 @section('scripts')
 <script>
-$(document).ready(function() {
-    Dropzone.options.myawesomedropzone = false;
-    $("#myawesomedropzone").dropzone({ 
-        paramName: "file", // The name that will be used to transfer the file
-        maxFilesize: 2,
-        url : null, // MB
-        autoProcessQueue:false,
-        autoQueue:false,
-        accept: function(file, done) {
-            if (file.name == "justinbieber.jpg") {
-            done("Naha, you don't.");
-            }
-            else { console.log('oooo'); }
+Dropzone.autoDiscover = false;
+Dropzone.options.myawesomedropzone ={
+    paramName: "file[]", // The na\me that will be used to transfer the file
+    maxFilesize: 2,
+    url : null, // MB
+    autoProcessQueue:false,
+    uploadMultiple:true,
+    accept: function(file, done) {
+        if (file.name == "justinbieber.jpg") {
+        done("Naha, you don't.");
         }
-    });
-// Dropzone.options.myawesomedropzone = {
-//   paramName: "file", // The name that will be used to transfer the file
-//   maxFilesize: 2,
-//   url : null, // MB
-//   autoProcessQueue:false,
-//   autoQueue:false,
-//   accept: function(file, done) {
-//     if (file.name == "justinbieber.jpg") {
-//       done("Naha, you don't.");
-//     }
-//     else { console.log('oooo'); }
-//   }
-// };
-});
+        else { console.log('oooo'); }
+    },
+    init: function(){
+        var submitbtn = document.querySelector("#btn");
+        myawesomedropzone = this;
+        submitbtn.addEventListener("click",function(){
+            myawesomedropzone.processQueue();
+        })
+    }
+}
 
 </script>
 @endsection

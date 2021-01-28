@@ -14,10 +14,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+
+    }
     public function index()
     {
 
@@ -51,24 +52,21 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //dd(storage_path('app/public') . '/download.jpeg');
-       //dd($request->all(), $request->file('file'));
         $post = new Post;
         $post->user_id = $request['user_id'];
         $post->post_title = $request['title'];
         $post->post_description = $request['description'];
         if($request->hasFile('file')){
             $file = $request->file('file');
-            $img = 'avatar-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = storage_path('app/public') ;
-            $file->move($path, $img);
-            $post->addMedia(storage_path('app/public') . '/'.$img)->toMediaCollection('images');
+            foreach ($file as $key => $item){
+                $img = 'hinh-' . $key . '.' . $item->getClientOriginalExtension();
+                $path = storage_path('app/public/');
+                $store = $item->move($path, $img);
+                $post->addMedia($store)->toMediaCollection('images');
+            }
         }
         $post->save();
-        $media = $post->getMedia();
-        // if($request->hasFile('image') && $request->file('image')->isValid()){
-        //     $post->addMediaFromRequest('image')->toMediaCollection('images');
-        // }
+        $media = $post->getMedia('images');
         return redirect('/photo');
     }
     // public function stordeMedia(Request $request){
@@ -118,7 +116,19 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
-    {
+    {    
+        if($request->hasFile('file')){
+            $post = Post::find($request['id']); 
+            $mediaItems = $post->getFirstMedia('images');
+            $mediaItems->delete();
+            $file = $request->file('file');
+            foreach ($file as $key => $item){   
+                $img = 'hinh-' . $key . '.' . $item->getClientOriginalExtension();
+                $path = storage_path('app/public/');
+                $store = $item->move($path, $img);
+                $post->addMedia($store)->toMediaCollection('images');
+            }
+        }
         $post=Post::where('id',$request['id'])
         ->update(['post_title' => $request['title'],'post_description' => $request['description']]);
         return redirect('/photo');

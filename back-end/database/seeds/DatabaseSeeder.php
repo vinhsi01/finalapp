@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
             ['firstName'=>'Vinh','lastName'=>'Nguyen','email'=>'vinhnd123@gmail.com','password'=>'202cb962ac59075b964b07152d234b70'],
         ]);
 
+        DB::table('albums')->insert([
+            ['user_id'=>'4','album_title'=>'albumnews','album_description'=>'description'],
+        ]);
         
     }
 }

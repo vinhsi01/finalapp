@@ -16,7 +16,6 @@
 //     return view('welcome');
 // });
 // Route::view('/','User.index');
- Route::view('/album','User.album');
  //Route::view('/login','User.login');
  Auth::routes(['verify' => true]);
 
@@ -28,15 +27,19 @@ Route::get('/logout', 'UserController@logout');
 Route::get('/','PostController@index');
 // Route::view('/photo','User.photo');
 //Route::view('/editPhoto/{id}','User.editPhoto');
+Route::get('/album','AlbumController@index')->name('album');
+Route::view('/addAlbum/store','User.addAlbum');
+Route::post('/album/store','AlbumController@store');
+
 Route::get('/admin','AdminController@index')->name('admin');
-Route::group(['middleware' => ['auth']],function(){
+// Route::group(['middleware' => ['auth']],function(){
     Route::view('/addPhoto/store','User.addPhoto');
     Route::get('/photo','PostController@showPhoto');
     Route::post('/photo/store','PostController@store');
     Route::get('/editPhoto/{id}','PostController@edit');
     Route::put('/photo/update','PostController@update');
     Route::get('/photo/delete/{id}','PostController@destroy');
-});
+// });
 
 // Route::redirect('/here','/there');
 // Route::view('/welcome','welcome');
